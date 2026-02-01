@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-gradient-start: #f0f9ff;
+    --bg-gradient-end: #e0f2fe;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-blue-50 via-white to-cyan-50 min-h-screen text-gray-900 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-xl;
+  }
+  
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600;
+  }
+  
+  .gradient-accent {
+    @apply bg-gradient-to-r from-accent-500 to-accent-600;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  @apply rounded-2xl font-sans;
+}
+
+.leaflet-control-zoom a {
+  @apply text-gray-800;
+}
+
+.leaflet-control-attribution {
+  @apply text-xs bg-white/90 rounded-lg;
+}
