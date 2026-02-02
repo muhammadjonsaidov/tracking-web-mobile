@@ -9,7 +9,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/mobile',
+  base: '/mobile/',
   server: {
     port: 5173,
     host: true,
