@@ -9,9 +9,17 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  base: '/mobile',
   server: {
-    host: '0.0.0.0',
     port: 5173,
-    allowedHosts: ['e93199e52c78.ngrok-free.app'],
+    host: true,
+    strictPort: true,
+    allowedHosts: ['living-likely-monster.ngrok-free.app'],
+    hmr: {
+      host: 'living-likely-monster.ngrok-free.app',
+      protocol: 'wss',
+      clientPort: 443,
+      path: '/frontend/@vite',
+    },
   },
 });
